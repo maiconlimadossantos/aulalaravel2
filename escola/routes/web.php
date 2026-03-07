@@ -10,3 +10,4 @@ use App\Http\Controllers\AlunoController;
 Route::get('/', [AlunoController::class, 'index'])->name('Cadastra_Aluno');
 Route::get('/alunos/create', [AlunoController::class, 'create'])->name('Cadastra_Aluno');
 Route::post('/alunos/salvar', [AlunoController::class, 'salvar'])->name('Cadastra_Aluno');
+Route::post('/alunos/exibir', [AlunoController::class, 'exibirAluno'])->name('Cadastra_Aluno');
