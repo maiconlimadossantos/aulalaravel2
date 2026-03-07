@@ -47,6 +47,7 @@ class AlunoController extends Controller
 
         return view('exibir_aluno', compact('nome', 'idade', 'isPrimo'));
     }
+
 }
 
 //O nome do curso em caixa alta (maiúsculas), centralizado e com destaque no topo
