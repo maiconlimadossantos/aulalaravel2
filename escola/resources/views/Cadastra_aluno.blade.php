@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layout')
 
-    <h1>Cadastrar Aluno</h1>
-    <form action="{{route('alunos.salvar')}}" method="POST">
-        @csrf
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome"><br><br>
+@section('content')
+<div class="max-w-lg mx-auto mt-10">
+    <x-card>
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Cadastrar Aluno</h1>
+        
+        <form action="{{ route('alunos.resultado') }}" method="POST">
+            @csrf
+            <x-campo-texto label="Nome do Aluno" name="nome" />
+            <x-campo-texto label="Ano de Nascimento" name="ano_nascimento" type="number" />
+            <x-campo-texto label="Curso" name="curso" />
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email"><br><br>
-
-        <label for="data_nascimento">Data de Nascimento:</label>
-        <input type="date" name="data_nascimento" id="data_nascimento"><br><br>
-
-        <x-botao type="submit" class="btn btn-primary">Salvar</x-botao>
-    </form>
-</body>
-</html>
+            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition shadow-lg">
+                Calcular e Exibir
+            </button>
+        </form>
+    </x-card>
+</div>
+@endsection
