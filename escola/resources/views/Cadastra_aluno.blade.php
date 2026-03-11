@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.app')
 
 @section('content')
 <div class="max-w-lg mx-auto mt-10">
